@@ -1,0 +1,80 @@
+<!doctype html>
+  <html>
+    <head>
+      <link href="Datingweb.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+      <h1 id="subject"> Please Enter your Details For Our Dating WebSite!</h1>
+      <form action = "http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="put" enctype="multipart/form-data">
+        <fieldset>
+          <legend> Your Face </legend>
+          <label for = "avatar"> Your Image: </label>
+            <input type="file" id = "avatar" name="avatar" required> <br>
+          <label for = "preview"> Your Prveiew: </label>
+            <img id="preview" width="100px">
+        </fieldset>
+
+        <fieldset>
+          <legend> Your General Details </legend>
+          <label for="name"> Name:</label>
+          <input type = "text" id = "name" name="name" required><br>
+          <label >Gender:</label>
+          <input type="radio"  name="gender" id="male" value="male"> <label for="male" class="radio"> male </label>
+          <input type="radio"  name="gender" id="female" value="female"> <label for="female" class="radio"> female </label> <br>
+          <label for="age"> Age: </label> <input type="number" id="age" name="age" required> <br>
+          <label for="dob"> Date of birth: </label> <input type = "date" id = "dob" name="dob"> <br>
+          <label for="color"> Favorite color: </label> <input type="color" id="color" name="color"><br>
+          <label for="country"> Which country: </label>
+          <select name = "country" id="country" name="country">
+            <option value="US"> US </option>
+            <option value="UK"> UK </option>
+            <option value="CA"> CA </option>
+            <option value="CA"> China </option>
+            <option value="CA"> Jap </option>
+            <option value="CA"> Brazil </option>
+          </select>
+        </fieldset>
+
+        <fieldSet>
+          <legend> Your Indicators </legend>
+          <label>Height:</label> <span class="rangeWord">Short</span> <input type = "range" min="0" max="100" step="5" value="50" id="height" name="mood"> <span class="rangeWord">Tall</span> <br>
+          <label>Salary:</label> <span class="rangeWord">Poor</span> <input type="range" min="0" max="100" step="5" value="50" id="Salary" name="Salary"> <span >Rich</span> <br>
+        </fieldset>
+
+        <fieldSet>
+          <legend> Your Contact Information </legend>
+          <label for="email"> Email: </label>
+            <input type="email" id="email" name="email" required> <br>
+
+          <label for="mobile"> Mobile: </label>
+           <input type="tel" id="mobile" name="mobile"> <br>
+
+          <label for="address"> Address: </label>
+           <textarea rows="3" cols="50" id="address" name="address">
+           </textarea><br>
+
+          <label > Method to contact you:</label>
+          <input type="checkbox" class="check" name="contact" value="Email"> Email
+          <input type="checkbox" class="check" name="contact" value="WhatsApp"> WhatsApp
+          <input type="checkbox" class="check" name="contact" value="InAppChat"> In-app chat
+        </fieldset>
+
+        <input type="submit" value="submit">
+
+      </form>
+
+      <script>
+        window.onload = function() {
+          var files = document.querySelectorAll("input[type=file]");
+          files[0].addEventListener("change", function(e) {
+              if(this.files && this.files[0]) {
+                  var reader = new FileReader();
+                  reader.onload = function(e) { document.getElementById("preview").setAttribute("src", e.target.result); }
+                  reader.readAsDataURL(this.files[0]);
+              }
+          });
+        }
+      </script>
+    </body>
+  </html>
