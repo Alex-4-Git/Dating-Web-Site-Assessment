@@ -5,33 +5,62 @@
 
     <body>
       <h1> Please Enter your Details For Our Dating WebSite! </h1>
-      <form action = "" method="put" enctype="multipart/form-data">
+      <form action = "http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="put" enctype="multipart/form-data">
         <fieldset>
-          <legend> your face </legend>
-          <label for = "image"> Your Image: </label>
-            <input type="file" id = "image">
-          <lable for = "preview"> Your Prveiew </label>
+          <legend> Your Face </legend>
+          <label for = "avatar"> Your Image: </label>
+            <input type="file" id = "avatar" name="avatar" required> <br>
+          <lable for = "preview"> Your Prveiew: </label>
+            <img id="preview">
         </fieldset>
 
         <fieldset>
           <legend> Your General Details </legend>
-          <label for="name"> Name:</label>
-          <input type = "text" id = "name"> <br>
+          <label> Name:
+            <input type = "text" id = "name" name="name" required> <br>
+          </label>
           Gender:
           <input type="radio" name="gender" id="male" value="male"> <label for="male"> male </label>
           <input type="radio" name="gender" id="female" value="female"> <label for="female"> female </label> <br>
-          <label for="age"> Age: </label> <input type="number" id="age">
-          <label for="dob"> Date of birth: </label> <input type = "date" id = "dob">
-          <label for="color"> Favorite color: </label> <input type="color" id="color"><br>
+          <label for="age"> Age: </label> <input type="number" id="age" name="age" required> <br>
+          <label for="dob"> Date of birth: </label> <input type = "date" id = "dob" name="dob"> <br>
+          <label for="color"> Favorite color: </label> <input type="color" id="color" name="color"><br>
           <label for="country"> Which country: </label>
-          <select name = "country" id="country">
+          <select name = "country" id="country" name="country">
             <option value="US"> US </option>
             <option value="UK"> UK </option>
             <option value="CA"> CA </option>
+            <option value="CA"> China </option>
+            <option value="CA"> Jap </option>
+            <option value="CA"> Brazil </option>
           </select>
         </fieldset>
 
+        <fieldSet>
+          <legend> Your Indicators </legend>
+          Height:Short <input type = "range" min="0" max="100" step="5" value="50" id="height" name="mood"> Tall <br>
+          Salary: Poor <input type="range" min="0" max="100" step="5" value="50" id="Salary" name="Salary"> Rich <br>
+        </fieldset>
 
+        <fieldSet>
+          <legend> Your Contact Information </legend>
+          <label for="email"> Email: </label>
+            <input type="email" id="email" name="email" required> <br>
+
+          <label for="mobile"> Mobile: </label>
+           <input type="tel" id="mobile" name="mobile"> <br>
+
+          <label for="address"> Address: </label>
+           <textarea rows="3" cols="50" id="address" name="address">
+           </textarea><br>
+
+          Method to contact you:
+          <input type="checkbox" name="contact" value="Email"> Email
+          <input type="checkbox" name="contact" value="WhatsApp"> WhatsApp
+          <input type="checkbox" name="contact" value="InAppChat"> In-app chat
+        </fieldset>
+
+        <input type="submit" value="submit">
 
       </form>
     </body>
